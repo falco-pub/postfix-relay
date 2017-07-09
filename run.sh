@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/usr/bin/supervisord&
-sleep 3
+touch /var/log/maillog
+touch /var/log/messages
 chmod o+r /var/log/*
-
+/usr/bin/supervisord
