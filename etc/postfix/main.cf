@@ -1,0 +1,4 @@
+mydomain = falco.bz
+mynetworks_style = host
+relay_domains = falco.bz
+relayhost = [ps]
