@@ -8,7 +8,7 @@ soft_bounce = yes
 
 alias_maps = 
 
-relay_domains = hash:/etc/postfix/relay_domains 
+relay_domains = hash:/etc/postfix/user/relay_domains 
 
 smtpd_client_restrictions = 
     reject_unknown_sender_domain 
@@ -17,6 +17,6 @@ smtpd_client_restrictions =
     reject_rbl_client b.barracudacentral.org
 
 smtpd_recipient_restrictions = 
-    check_sender_access hash:/etc/postfix/sender_access 
-    check_recipient_access hash:/etc/postfix/recipient_access 
-    check_recipient_access regexp:/etc/postfix/recipient_access.regexp 
+    check_sender_access hash:/etc/postfix/user/sender_access 
+    check_recipient_access hash:/etc/postfix/user/recipient_access 
+    check_recipient_access regexp:/etc/postfix/user/recipient_access.regexp 
