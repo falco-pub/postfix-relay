@@ -1,4 +1,22 @@
-mydomain = falco.bz
+mydomain = pfix
+
 mynetworks_style = host
-relay_domains = falco.bz
+
 relayhost = [store]
+
+soft_bounce = yes 
+
+alias_maps = 
+
+relay_domains = hash:/etc/postfix/relay_domains 
+
+smtpd_client_restrictions = 
+    reject_unknown_sender_domain 
+    reject_rbl_client zen.spamhaus.org 
+    reject_rbl_client bl.spamcop.net 
+    reject_rbl_client b.barracudacentral.org
+
+smtpd_recipient_restrictions = 
+    check_sender_access hash:/etc/postfix/sender_access 
+    check_recipient_access hash:/etc/postfix/recipient_access 
+    check_recipient_access regexp:/etc/postfix/recipient_access.regexp 
