@@ -10,6 +10,8 @@ alias_maps =
 
 relay_domains = /etc/postfix/user/relay_domains 
 
+transport_maps = hash:/etc/postfix/user/transport
+
 smtpd_client_restrictions = 
     reject_unknown_sender_domain 
     reject_rbl_client zen.spamhaus.org 
