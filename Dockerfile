@@ -18,6 +18,5 @@ RUN chmod +x run.sh
 EXPOSE 25
 
 VOLUME /var/log
-VOLUME /etc/postfix/user
 
 CMD ["./run.sh"]
