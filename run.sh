@@ -5,10 +5,11 @@ touch /var/log/messages
 chmod o+r /var/log/*
 
 pushd /etc/postfix/
-for f in `find -type f`; do
+  chown -R root: .
+  for f in `find -type f`; do
     c=`awk '/^#run:/ {gsub (/^#run:/,""); print $0}' $f`
     [ -z "$c" ] || ( echo + $c $f && eval $c $f )
-done
+  done
 popd
 
 /usr/bin/supervisord
